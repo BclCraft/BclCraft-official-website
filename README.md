@@ -1,7 +1,7 @@
 ### BclCraft官网
 
 - 此项目是BclCraft服务器官网开源版本
-- [Tiking(Tiking-010)](https://github.com/Tiking-919/)为主要开发者[Bilibili](https://space.bilibili.com/432065554)
+- [Tiking(Tiking-010)](https://github.com/Tiking-010/)为主要开发者[Bilibili](https://space.bilibili.com/432065554)
 
 - 
 ![](https://s1.imagehub.cc/images/2024/02/04/fc21a5262cecec005d2ced1a80b2160e.md.png)
