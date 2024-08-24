@@ -1205,7 +1205,16 @@ a:focus {
 
 
 }
-/* end footer section*/
 
-/*# sourceMappingURL=style.css.map */
+@font-face {
+  font-family: "minecraft";
+  src: url("..\fonts\minecraft.woff2") format("woff2"),  /* 现代浏览器 */
+       url("..\fonts\minecraft.woff") format("woff"),  /* 较旧的浏览器 */ 
+       url("..\fonts\minecraft.ttf") format("truetype");  /* Safari, Android, iOS */ 
+  font-weight: normal;
+  font-style: normal;
+}
+body, html {  
+  font-family: 'minecraft', sans-serif; /* 使用自定义字体，后备字体为sans-serif */  
+}
 
