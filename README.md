@@ -2,7 +2,7 @@
 
 - 此项目是BclCraft服务器官网开源版本
 - Tiking([Tiking-owo](https://github.com/Tiking-owo/))为主要开发者[Bilibili](https://space.bilibili.com/432065554)
-- 下载请到[Releases](https://github.com/BclCraft/BclCraft.github.io/releases)下载正式版本
+- 下载请到[Releases](https://github.com/BclCraft/BclCraft-official-website/releases)下载正式版本
 
 
 ![](https://s1.imagehub.cc/images/2024/02/04/fc21a5262cecec005d2ced1a80b2160e.md.png)
