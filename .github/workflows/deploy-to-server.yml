@@ -1,20 +1,20 @@
-name: Deploy to Local Server via SFTP
+  name: Deploy to Server via SSH
 
 on:
   push:
     branches:
-      - main  # 每次推送到 main 分支时触发部署
+      - main  # 监听 main 分支的推送
 
 jobs:
   deploy:
     runs-on: ubuntu-latest  # 使用 GitHub 提供的 Ubuntu 环境
 
     steps:
-      # Step 1: 检出仓库代码
+      # Step 1: 检出最新的代码
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Step 2: 设置 SSH 密钥
+      # Step 2: 配置 SSH 密钥
       - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
@@ -28,17 +28,26 @@ jobs:
         run: |
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-      # Step 4: 删除目标服务器上的现有文件
+      # Step 4: 删除目标服务器上的旧文件
       - name: Remove existing files on server
         run: |
-          ssh -o StrictHostKeyChecking=no root@106.52.39.35 << 'EOF'
-            # 删除目标目录下的所有文件（小心使用）
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+            echo "Removing old files from server..."
             rm -rf /www/wwwroot/BCLCraft/Site/www/*
-            echo "All files deleted from the target directory."
+            echo "Old files removed."
           EOF
 
-      # Step 5: 使用 find 命令排除不需要上传的文件并通过 sftp 上传
-      - name: Upload files via SFTP
+      # Step 5: 上传新文件到服务器（通过 SCP）
+      - name: Upload new files to server
         run: |
-          # 使用 find 命令选择文件并通过 SFTP 上传
-          find . -type f ! -path "./.git/*" ! -path "./.github/*" -exec sftp -o StrictHostKeyChecking=no root@106.52.39.35:/www/wwwroot/BCLCraft/Site/www <<< $'put {}' \;
+          scp -o StrictHostKeyChecking=no -r ./* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/www/wwwroot/BCLCraft/Site/www/
+
+      # Step 6: 执行部署命令
+      - name: Run deployment script on server
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+            cd /www/wwwroot/BCLCraft/Site/www
+            npm install --production  # 假设是 Node.js 项目
+            pm2 restart your-app-name  # 假设使用 pm2 管理应用
+            echo "Deployment complete!"
+          EOF
