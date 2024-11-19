@@ -31,7 +31,7 @@ jobs:
       # Step 4: 删除目标服务器上的现有文件
       - name: Remove existing files on server
         run: |
-          ssh -o StrictHostKeyChecking=no user@106.52.39.35 << 'EOF'
+          ssh -o StrictHostKeyChecking=no root@106.52.39.35 << 'EOF'
             # 删除目标目录下的所有文件（小心使用）
             rm -rf /www/wwwroot/BCLCraft/Site/www/*
             echo "All files deleted from the target directory."
@@ -41,4 +41,4 @@ jobs:
       - name: Upload files via SFTP
         run: |
           # 使用 find 命令选择文件并通过 SFTP 上传
-          find . -type f ! -path "./.git/*" ! -path "./.github/*" -exec sftp -o StrictHostKeyChecking=no user@106.52.39.35:/www/wwwroot/BCLCraft/Site/www <<< $'put {}' \;
+          find . -type f ! -path "./.git/*" ! -path "./.github/*" -exec sftp -o StrictHostKeyChecking=no root@106.52.39.35:/www/wwwroot/BCLCraft/Site/www <<< $'put {}' \;
