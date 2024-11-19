@@ -1,0 +1,44 @@
+name: Deploy to Local Server via SFTP
+
+on:
+  push:
+    branches:
+      - main  # 每次推送到 main 分支时触发部署
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # 使用 GitHub 提供的 Ubuntu 环境
+
+    steps:
+      # Step 1: 检出仓库代码
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: 设置 SSH 密钥
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Step 3: 配置 SSH known_hosts
+      - name: Set up known hosts
+        run: |
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+      # Step 4: 删除目标服务器上的现有文件
+      - name: Remove existing files on server
+        run: |
+          ssh -o StrictHostKeyChecking=no user@106.52.39.35 << 'EOF'
+            # 删除目标目录下的所有文件（小心使用）
+            rm -rf /www/wwwroot/BCLCraft/Site/www/*
+            echo "All files deleted from the target directory."
+          EOF
+
+      # Step 5: 使用 find 命令排除不需要上传的文件并通过 sftp 上传
+      - name: Upload files via SFTP
+        run: |
+          # 使用 find 命令选择文件并通过 SFTP 上传
+          find . -type f ! -path "./.git/*" ! -path "./.github/*" -exec sftp -o StrictHostKeyChecking=no user@106.52.39.35:/www/wwwroot/BCLCraft/Site/www <<< $'put {}' \;
