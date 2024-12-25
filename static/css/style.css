@@ -727,7 +727,7 @@ a:focus {
   display: -ms-flexbox;
 
   display: flex;
-
+  border-radius: 20px;
   -webkit-box-pack: center;
 
   -ms-flex-pack: center;
@@ -749,10 +749,9 @@ a:focus {
   background-color: transparent;
 
   border: 1.5px solid #ffffff;
-
+  border-radius: 20px;
   color: #ffffff;
 
-  border-radius: 0;
 
   -webkit-transition: -webkit-transform 0.3s;
 
@@ -771,7 +770,7 @@ a:focus {
 .heathy_section .btn-box a:hover {
 
   background-color: #ffffff;
-
+  border-radius: 20px;
   color: #000000;
 
 }
@@ -1012,7 +1011,7 @@ a:focus {
 
 
 
-.contact_section button {
+.contact_section .red_button {
 
   padding: 10px 45px;
 

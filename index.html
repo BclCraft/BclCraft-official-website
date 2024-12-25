@@ -50,6 +50,11 @@
     <!-- Custom styles for this template -->
 
     <link rel="stylesheet" href="static/css/style.css">
+    <!-- 引入DPlayer的CSS文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
+
+    <!-- 引入DPlayer的JavaScript文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
 
     <!-- responsive style -->
 
@@ -125,7 +130,7 @@
                       <h1>BCLcraft</h1>
                       <p>在BCLcraft服务器中，玩家们享有极高的自由度，可以自由设计、测试和实装各种建筑和装置。
                       只要不违背大家认可或默许的社区规范，每个玩家都可以在服务器中自由发展。</p>
-                      <div class=" myBox">
+                      <div class="btn-box myBox">
                         <a href="https://space.bilibili.com/594581297/">哔 哩 哔 哩</a>
                       </div>
                     </div>
@@ -141,10 +146,10 @@
     <!-- Us section -->
     <section class="us_section layout_padding myBox">
       <div class="container myBox">
-        <div class="heading_container myBox">
-          <h2>BclCraft&nbsp;</h2>
+        <div class="heading_container myBox" >
+          <h2 style="color: #0b6d9b;">BCLcraft&nbsp;</h2>
         </div>
-        <div class="us_container myBox">
+        <div class="us_container myBox" style="border-radius: 20px;backdrop-filter: blur(10px);/*! background-color: black; */background-color: rgba(117, 117, 117, 0.349);">
           <div class="row myBox">
             <div class="col-lg-3 col-md-6 myBox">
               <div class="box myBox">
@@ -199,13 +204,13 @@
     <!-- end us section -->
     <!-- heathy section -->
     <section class="heathy_section layout_padding myBox">
-      <div class="container myBox">
+      <div class="container myBox" style="padding:20px; border-radius: 20px;backdrop-filter: blur(10px);/*! background-color: black; */background-color: rgba(117, 117, 117, 0.349);">
         <div class="row myBox">
           <div class="col-md-12 mx-auto myBox">
             <div class="detail-box myBox">
               <h2><span style="text-decoration: underline">进服须知</span></h2>
               <p>为了顺利进入BclCraft的【镜像服】和【创造服】，玩家需要安装《Xaero's小地图》和 《Xaero's世界地图》模组，目的是保障客户端与服务器之间的正常通信，避免因收发异常而被踢 出服务器(同一个域名/ip进入多个服务器，避免小地图显示错误)。在此推荐使用我们的整合客户端。</p>
-              <div class="btn-box myBox">
+              <div class="btn-box myBox" style="border-radius: 20px;">
                 <a href="/error"> 了解详细 </a>
               </div>
             </div>
@@ -222,17 +227,17 @@
         </div>
         <div class="row myBox">
           <div class="col-lg-4 col-md-6 mx-auto myBox">
-            <div class="box myBox">
+            <div class="box myBox" style="padding:20px; border-radius: 20px;backdrop-filter: blur(10px);/*! background-color: black; */background-color: rgba(117, 117, 117, 0.349);">
               <div class="name myBox">
                 <span style="text-wrap: nowrap; color: #191970; text-decoration: none;"><h5>卑微技术：ByLong_Ge&nbsp;</h5></span>
               </div>
-              <div class="img-box myBox">
+              <div class="img-box myBox" >
                 <img src="https://gitee.com/Tiking-010/bcl-web/raw/master/ByLong_Ge.webp" alt="">
               </div>
 </div>
           </div>
           <div class="col-lg-4 col-md-6 mx-auto myBox">
-            <div class="box myBox">
+            <div class="box myBox" style="padding:20px; border-radius: 20px;backdrop-filter: blur(10px);/*! background-color: black; */background-color: rgba(117, 117, 117, 0.349);">
               <div class="name myBox">
                 <span style="text-wrap: nowrap; color: #191970; text-decoration: none;"><h5>服主：MC_lige&nbsp;</h5>
                 </span>
@@ -243,7 +248,7 @@
 </div>
           </div>
           <div class="col-lg-4 col-md-6 mx-auto myBox">
-            <div class="box myBox">
+            <div class="box myBox" style="padding:20px; border-radius: 20px;backdrop-filter: blur(10px);/*! background-color: black; */background-color: rgba(117, 117, 117, 0.349);">
               <div class="name myBox">
                 <span style="text-wrap: nowrap; color: #191970; text-decoration: none;"><h5>大股东：Hannibal4869&nbsp;</h5></span>
               </div>
@@ -261,8 +266,8 @@
       <div class="container-fluid myBox">
         <div class="row myBox">
           <div class="col-md-6 px-0 myBox">
-            <div class="img-box myBox">
-              <img src="https://gitee.com/Tiking-010/bcl-web/raw/master/BclCraft.webp" alt="" class="myBox">
+            <div style="height: auto; width: auto;" class="img-box myBox">
+              <img src="https://tk.ap.bclcraft.com/Tiking/web/Bclcraft%20LOGO.svg" alt="" class="myBox">
             </div>
           </div>
           <div class="col-lg-5 col-md-6 myBox">
@@ -271,20 +276,40 @@
                 <h2>关于我们</h2>
               </div>
               <div class="contact_box myBox">
-                <p class="myBox"> BclCraft服务器1.18.1【一周目】从2021年12月29 正式开服，于2022年6月20日正式关服。现在BclCraft服务器1.20【二周目】在2022年6月12日开服至今……</p>
+                <p class="myBox"> BCLcraft服务器1.18.1【一周目】从2021年12月29 正式开服，于2022年6月20日正式关服；BCLcraft服务器1.20【二周目】在2022年6月12日开服至2024年12月2日；BCLcraft服务器1.21【三周目】在2024年12月21号12:00正式开启！</p>
                 <h5><p class="myBox">我们 承自 [往昔] 跨越 [现在] 直至 [未来]</p></h5>
 					<p class="announce myBox"></p>
-          <div  style="width: 640px; height: 370px;">
-            <iframe src="./player/index.html" height="100%" width="100%" onmouseover="movIn()" onmouseout="movOut()" id="map-iframe"> 宣传片 </iframe>
-          </div>
-                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=i672LWS7AzF4dGdbYM_CUn1N_tCgO5lU&authKey=WANxCUIjG3UGaD6RxDc7IVNAiyuWtM605zwNrEHpLZPHGDEU4VUUzavNYzWZcnH2&noverify=0&group_code=667857014"><button class="myBox">加入QQ群</button></a>
-                <a href="https://space.bilibili.com/594581297/" target="_blank"><button class="myBox">哔哩哔哩</button></a>
+          <div id="dplayer-container" style="width: 100%; height: auto;"></div>
+
+                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=i672LWS7AzF4dGdbYM_CUn1N_tCgO5lU&authKey=WANxCUIjG3UGaD6RxDc7IVNAiyuWtM605zwNrEHpLZPHGDEU4VUUzavNYzWZcnH2&noverify=0&group_code=667857014"><button class="red_button myBox">加入QQ群</button></a>
+                <a href="https://space.bilibili.com/594581297/" target="_blank"><button class="red_button myBox">哔哩哔哩</button></a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <script>
+      // 初始化DPlayer
+      const dp = new DPlayer({
+          container: document.getElementById('dplayer-container'),
+          video: {
+            url: 'https://tk.ap.bclcraft.com/Tiking/web/bcl-mov.mp4',
+            pic: '', // 视频封面
+            thumbnails: '', // 视频缩略图
+          },
+          danmaku: {
+            id: '', // 弹幕文件或API
+            api: '', // 如果有的话
+            token: '', // 如果有的话
+            // 其他弹幕配置...
+          },
+          autoplay: false, // 是否自动播放
+          loop: false, // 是否循环播放
+          lang: 'zh-cn', // 播放器语言，'en' 表示英文，'zh-cn' 表示中文
+          // 其他配置...
+        });
+      </script>
     <!-- end contact section -->
     <!-- info section -->
     <section class="info_section layout_padding2 myBox">
