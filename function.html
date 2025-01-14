@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!-- 
+ ____            ___    ____                      ___  __      
+/\  _`\         /\_ \  /\  _`\                  /'___\/\ \__   
+\ \ \L\ \    ___\//\ \ \ \ \/\_\  _ __    __   /\ \__/\ \ ,_\  
+ \ \  _ <'  /'___\\ \ \ \ \ \/_/_/\`'__\/'__`\ \ \ ,__\\ \ \/  
+  \ \ \L\ \/\ \__/ \_\ \_\ \ \L\ \ \ \//\ \L\.\_\ \ \_/ \ \ \_ 
+   \ \____/\ \____\/\____\\ \____/\ \_\\ \__/.\_\\ \_\   \ \__\
+    \/___/  \/____/\/____/ \/___/  \/_/ \/__/\/_/ \/_/    \/__/
+                                                               
+ -->
+<html lang="zh-CN">
+	<head>
+		<title>BCL生电服务器 | 指南</title>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="BCL,BclCraft,BCLcraft,bcl,">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" href="images/cd.ico"/>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+<body class="is-preload">
+
+	<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+					<a href="index.html" class="logo"><strong>BCLcraft</strong> <span> 官方网站</span></a>
+					<nav>
+						<a href="#menu">菜单</a>
+					</nav>
+				</header>
+
+			<!-- Menu -->
+				<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">首页</a></li>
+						<li><a href="https://www.bclcraft.com/WebMap/">网页地图</a></li>
+						<li><a href="team.html">BCL 团队</a></li>
+						<li><a href="function.html">服务器指南</a></li>
+					</ul>
+					<ul class="actions stacked">
+						<li><a href="https://qm.qq.com/q/8Tgvj9Y7QI" class="button primary fit">加入我们（审核群）</a></li>
+					</ul>
+				</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style3">
+						<div class="inner">
+							<span class="image">
+								<img src="https://gitee.com/Tiking-010/bcl-web/raw/master/jt.webp" alt="" />
+							</span>
+							<header class="major">
+								<h1>服务器指南</h1>
+							</header>
+							<div class="content">
+								<p>这里有服务器相关的说明<br><sub>编辑：Tiking_</sub></p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+					<div class="inner">
+						<div class="row">
+							<div class="col-6 col-12-small">
+								<h2><font color="#b7efff">服务器整合包</font></h2>
+								<p>推荐使用<u>服务器整合包</u>来游玩本服务器</p>
+								
+								<h4>BCL整合包使用教程</h4>
+								<ol>
+									<li>通过主群文件或者GitHub下载<b>(<a href="https://github.com/BclCraft/BCL-1.20-integration-package/releases">点击下载</a>)</b></li>
+									<li>下载完成之后使用第三方启动器安装整合包（目前测试通过可以使用的启动器有：PCL2、HMCL、Modrinth…其他的暂未测试）。</li>
+									<li>安装完成之后启动游戏，进入游戏需要自行修改模组的快捷键，避免按键冲突。</li>
+								</ol>
+								<hr class="major" />
+									<h2><font color="#b7efff">快捷菜单 &amp; 指令查询</font></h2>
+									<p>如果记不住各种指令的话可以在聊天栏输入<code>!!help</code>、<code>/help</code></p>
+									<ul class="alt">
+										<li><code>!!here</code> 广播当前坐标 </li>
+										<li><code>/ping</code>可用于查询服务器与客户端的延迟</li>
+									</ul>
+							</div>
+							<div class="col-6 col-12-small">
+								<h2><font color="#b7efff">指令列表</font></h2>
+								<h5><code>!!</code>为MCDR指令</h5>
+								<p>查看常用指令</p>
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>指令</th>
+												<th>二、三级指令</th>
+												<th>描述</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><code>!!seed</code></td>
+												<td>无</td>
+												<td>获取世界种子</td>
+											</tr>
+											<tr>
+												<td><code>/server</code></td>
+												<td><code>survival</code>生存服<code>creative</code>创造服<code>mirror</code>镜像服</td>
+												<td>跨服</td>
+											</tr>
+											<tr>
+												<td><code>/player</code></td>
+												<td>假人ID<code>spawn</code></td>
+												<td>召唤假人</td>
+											</tr>
+											<tr>
+												<td><code>!!here</code></td>
+												<td>无</td>
+												<td>广播当前坐标(主世界+地狱坐标)</td>
+											</tr>
+											<tr>
+												<td><code>!!whereis</code></td>
+												<td>在线玩家ID</td>
+												<td>获取其他在线玩家位置(主世界+地狱坐标)</td>
+											</tr>
+											<tr>
+												<td><code>@</code>或<code>@@</code></td>
+												<td>在线玩家ID</td>
+												<td>@某人，<code>@ all</code>可作用于所有玩家。使用两个@@小心被打</td>
+											</tr>
+											<tr>
+												<td><code>/ping</code></td>
+												<td>无</td>
+												<td>可用于查询服务器与客户端的延迟</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+					</div>
+					<div class="col-6 col-12-small">
+						<ul class="actions stacked">
+						<li><a href="index.html" class="button primary fit">返回</a></li>
+						</ul>
+					</div>
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="copyright">
+							<li>© Untitled</li>
+							<a style="text-decoration: none;" href="https://beian.miit.gov.cn/" target="_blank">闽ICP备2024058720号-3</a>
+							<img style="padding-top:2px;margin-bottom: -5px;" src="./images/beian.png">
+							<a style="text-decoration: none;" href="https://beian.mps.gov.cn/#/query/webSearch?code=35018102240070" rel="noreferrer" target="_blank">闽公网安备35018102240070号</a>
+							<a style="text-decoration: none;" class="banquan" href="https://icp.gov.moe/?keyword=20251145"target="_blank">萌ICP备20251145号</a>
+						</ul>
+					</div>
+				</footer>
+					</div>
+
+			
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
