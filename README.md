@@ -7,7 +7,7 @@
 
 ![](https://s1.imagehub.cc/images/2024/02/04/fc21a5262cecec005d2ced1a80b2160e.md.png)
 ### 超链接
-- [BclCraft官网](http://www.bclcraft.com/)
+- [BCLcraft官网](http://www.bclcraft.com/)
 - [Bilibili哔哩哔哩](https://space.bilibili.com/594581297)
 
   
