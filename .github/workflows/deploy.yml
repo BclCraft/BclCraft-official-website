@@ -1,0 +1,43 @@
+name: Deploy to Server via SSH
+
+on:
+  push:
+    branches:
+      - main  # 每次推送到 main 分支时触发部署
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # 使用 GitHub 提供的 Ubuntu 环境
+
+    steps:
+      # Step 1: 检出最新的代码
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: 配置 SSH 密钥
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Step 3: 配置 SSH known_hosts
+      - name: Set up known hosts
+        run: |
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+      # Step 4: 删除目标服务器上的旧文件
+      - name: Remove existing files on server
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+            echo "Removing old files from server..."
+            rm -rf /www/wwwroot/BCLCraft/Site/www/*
+            echo "Old files removed."
+          EOF
+
+      # Step 5: 上传新文件到服务器（通过 SCP）
+      - name: Upload new files to server
+        run: |
+          scp -o StrictHostKeyChecking=no -r ./* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/www/wwwroot/BCLCraft/Site/www/
