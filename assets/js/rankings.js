@@ -1,11 +1,7 @@
-async function loadAndDisplayTopRankings() {
-    const metaTag = document.querySelector('meta[name="rankings-url"]');
-    const url = metaTag ? metaTag.getAttribute('content') : '';
-
-    if (!url) {
-        console.error('Rankings URL not found in meta tag.');
-        return;
-    }
+async function loadAndDisplayRankings(queryParam) {
+    // 榜单apiURL
+    const baseUrl = 'https://api.bclcraft.com/leaderboard?type=';
+    const url = baseUrl + queryParam;
 
     try {
         const response = await fetch(url);
@@ -14,7 +10,7 @@ async function loadAndDisplayTopRankings() {
         }
         const data = await response.json();
 
-        // 按照count值从大到小排序，并取前十个
+        // 按照count值从大到小排序，并取前十个（如果数据足够多）
         const sortedData = data.slice(0, 10).sort((a, b) => b.count - a.count);
 
         // 添加排名信息（从1开始）
@@ -52,5 +48,4 @@ function updateTable(data) {
     });
 }
 
-// 在页面加载完成后调用loadAndDisplayTopRankings函数
-window.onload = loadAndDisplayTopRankings;
+// 不再自动调用loadAndDisplayRankings，而是让每个页面自己调用并传递参数
