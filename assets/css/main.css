@@ -1,6 +1,12 @@
 @import url(fontawesome-all.min.css);
 @import url("./googleapis.css");
 
+a:hover {
+
+	cursor: url('https://www.bclcraft.com/images/logo.cur'), auto; /* 替换为你的悬停状态鼠标指针图片的实际路径 */
+
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
