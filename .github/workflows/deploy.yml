@@ -40,4 +40,4 @@ jobs:
       # Step 5: 上传新文件到服务器（通过 SCP）
       - name: Upload new files to server
         run: |
-          scp -o StrictHostKeyChecking=no -p ${{ secrets.SERVER_SSH_PORT }} -r ./* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/www/wwwroot/BclCraft/Site/www/
+          scp -o StrictHostKeyChecking=no -P ${{ secrets.SERVER_SSH_PORT }} -r ./* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/www/wwwroot/BclCraft/Site/www/
